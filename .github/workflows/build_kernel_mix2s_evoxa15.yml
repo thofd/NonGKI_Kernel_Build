@@ -1,4 +1,4 @@
-name: Build Kernel Xiaomi Mix2s (EVOX-A15-Official) with KSU and SUSFS
+name: Build Kernel Redmi Note 9 Pro (gauguin) with KSU and SUSFS
 on:
   workflow_dispatch:
 
