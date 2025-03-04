@@ -228,7 +228,7 @@ jobs:
           # Set SUSFS
           if [[ "${{ env.SUSFS_ENABLE }}" == true ]]; then
             if [[ "${{ env.SUSFS_FIXED }}" == true ]]; then
-              PATCHES_SOURCE=simonpunk//susfs4ksu
+              PATCHES_SOURCE=simonpunk/susfs4ksu
               PATCHES_BRANCH=kernel-4.19
               git clone https://gitlab.com/PATCHES_SOURCE.git -b $PATCHES_BRANCH Kernel_Patches --depth=1 # It's not necessary.
               # git clone https://${{ github.actor }}:${{ secrets.SPECIAL_COMMAND }}@github.com/$PATCHES_SOURCE -b $PATCHES_BRANCH Kernel_Patches # if u need.
