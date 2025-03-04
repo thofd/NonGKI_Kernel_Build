@@ -327,9 +327,9 @@ jobs:
         if: env.SUSFS_ENABLE == 'true' && env.SUSFS_FIXED == 'true'
         run: |
           cd $GITHUB_WORKSPACE/device_kernel/
-          cp Kernel_Patches/[patch_folder]/[patch_file].patch ./
+          cp Kernel_Patches/KernelSU/10_enable_susfs_for_ksu.patch ./
 
-          patch -p1 < [patch_file].patch || true
+          patch -p1 < 10_enable_susfs_for_ksu.patch || true
 
       - name: Setup ccache
         uses: hendrikmuhs/ccache-action@v1.2
