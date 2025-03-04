@@ -1,4 +1,4 @@
-name: Build Kernel Template (Cannot be used for compilation directly)
+name: Build Kernel Template (gauguin_RedmiNote9Pro.env)
 on:
   workflow_call:
   workflow_dispatch:
