@@ -1,4 +1,4 @@
-name: Build Kernel Template (gauguin_RedmiNote9Pro.env)
+name: Build Kernel (gauguin_RedmiNote9Pro) susfs_ksu_next
 on:
   workflow_call:
   workflow_dispatch:
