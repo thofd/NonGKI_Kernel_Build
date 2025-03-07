@@ -310,7 +310,7 @@ jobs:
           cp /tmp/Patches/temp_dtbo.patch ./
           patch -p1 < temp_dtbo.patch
           sed -i '/targets := Image Image.bz2 Image.gz Image.lz4 Image.lzma Image.lzo/s/$/ dtbo.img/' ./arch/arm64/boot/Makefile
-          sed -i '/$(obj)\/Image\.gz-dtb: $(obj)\/Image\.gz $(DTB_OBJS) FORCE/a \#DTBO\n$(obj)\/dtbo.img: $(DTBO_OBJS) FORCE\n\t$(call if_changed,mkdtimg)' ./arch/arm64/boot/Makefile
+          sed -i '//$(obj)\/Image\: $(obj)\/Image\ $(obj)\/Image\.gz-dtb: $(obj)\/Image\.gz $(DTB_OBJS) FORCE/a \#DTBO\n$(obj)\/dtbo.img: $(DTBO_OBJS) FORCE\n\t$(call if_changed,mkdtimg)' ./arch/arm64/boot/Makefile
           sed -i '/KBUILD_DTBS\t:= dtbs/a \#DTBO\nKBUILD_DTBO_IMG := dtbo.img' ./arch/arm64/Makefile
           sed -i '/dtc-tmp = $(subst $(comma),_,$(dot-target)\.dts\.tmp)/a \#DTBO\n# mkdtimg\n#----------------------------------------------------------------------------\nquiet_cmd_mkdtimg = DTBOIMG $@\ncmd_mkdtimg = python3 $(srctree)\/scripts\/dtc\/mkdtboimg.py create $@ --page_size=4096 $(filter-out FORCE,$^)' ./scripts/Makefile.lib
 
