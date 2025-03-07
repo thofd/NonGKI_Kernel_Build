@@ -1,4 +1,4 @@
-name: Build Kernel Template (Cannot be used for compilation directly)
+name: Build Kernel Redmi_note9pro_CN
 on:
   workflow_call:
   workflow_dispatch:
