@@ -425,15 +425,16 @@ jobs:
         if: env.SUSFS_ENABLE == 'true' && env.SUSFS_FIXED == 'true'
         run: |
           cd $GITHUB_WORKSPACE/device_kernel/
-          #cp NonGKI_Kernel_Build/KernelSU/10_enable_susfs_for_ksu.patch ./KernelSU/
-          cp NonGKI_Kernel_Build/50_add_susfs_in_kernel-4.19.patch ./
+          git clone https://github.com/thofd/NonGKI_Kernel_Build.git -b note9pro NonGKI_Kernel_Patches --depth=1
+          cp NonGKI_Kernel_Build/susfs/KernelSU/10_enable_susfs_for_ksu.patch ./KernelSU/
+          cp NonGKI_Kernel_Build/susfs/50_add_susfs_in_kernel-4.19.patch ./
           patch -p1 < 50_add_susfs_in_kernel-4.19.patch || true
-          #cp susfs4ksu/fs/susfs.c ./fs
-          #cp susfs4ksu/include/linux/sus_su.h ./include/linux
-          #cp susfs4ksu/include/linux/susfs.h ./include/linux
-          #cp susfs4ksu/include/linux/susfs_def.h ./include/linux
+          cp NonGKI_Kernel_Build/susfs/fs/susfs.c ./fs
+          cp NonGKI_Kernel_Build/susfs/include/linux/sus_su.h ./include/linux
+          cp NonGKI_Kernel_Build/susfs/include/linux/susfs.h ./include/linux
+          cp NonGKI_Kernel_Build/susfs/include/linux/susfs_def.h ./include/linux
 
-          cd NonGKI_Kernel_Build/KernelSU
+          cd NonGKI_Kernel_Build/susfs/KernelSU
           patch -p1 < KernelSU/10_enable_susfs_for_ksu.patch || true
 
       - name: Setup ccache
