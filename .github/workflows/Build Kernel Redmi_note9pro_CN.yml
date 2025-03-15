@@ -1,5 +1,5 @@
 
-name: Build Kernel Template (Cannot be used for compilation directly)
+name: Build Kernel Redmi_note9pro with KSU and SUSFS
 on:
   workflow_call:
   workflow_dispatch:
