@@ -425,7 +425,7 @@ jobs:
         if: env.SUSFS_ENABLE == 'true' && env.SUSFS_FIXED == 'true'
         run: |
           cd $GITHUB_WORKSPACE/device_kernel/
-          cp NonGKI_Kernel_Build/KernelSU/10_enable_susfs_for_ksu.patch ./KernelSU/
+          #cp NonGKI_Kernel_Build/KernelSU/10_enable_susfs_for_ksu.patch ./KernelSU/
           cp NonGKI_Kernel_Build/50_add_susfs_in_kernel-4.19.patch ./
           patch -p1 < 50_add_susfs_in_kernel-4.19.patch || true
           #cp susfs4ksu/fs/susfs.c ./fs
