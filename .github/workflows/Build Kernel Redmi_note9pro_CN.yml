@@ -425,7 +425,7 @@ jobs:
         if: env.SUSFS_ENABLE == 'true' && env.SUSFS_FIXED == 'true'
         run: |
           cd $GITHUB_WORKSPACE/device_kernel/
-          git clone https://github.com/thofd/NonGKI_Kernel_Build.git -b note9pro NonGKI_Kernel_Patches --depth=1
+          git clone https://github.com/thofd/NonGKI_Kernel_Build.git -b NonGKI_Kernel_Build --depth=1
           cp NonGKI_Kernel_Build/susfs/KernelSU/10_enable_susfs_for_ksu.patch ./KernelSU/
           cp NonGKI_Kernel_Build/susfs/50_add_susfs_in_kernel-4.19.patch ./
           patch -p1 < 50_add_susfs_in_kernel-4.19.patch || true
