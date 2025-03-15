@@ -425,9 +425,15 @@ jobs:
         if: env.SUSFS_ENABLE == 'true' && env.SUSFS_FIXED == 'true'
         run: |
           cd $GITHUB_WORKSPACE/device_kernel/
-          cp NonGKI_Kernel_Patches/[patch_folder]/[patch_file].patch ./
-
-          patch -p1 < [patch_file].patch || true
+          cp NonGKI_Kernel_Patches/KernelSU/10_enable_susfs_for_ksu.patch ./KernelSU/
+          cp NonGKI_Kernel_Patches/50_add_susfs_in_kernel-4.19.patch ./
+          cp NonGKI_Kernel_Patches/fs/susfs.c ./fs
+          cp NonGKI_Kernel_Patches/include/linux/sus_su.h ./include/linux
+          cp NonGKI_Kernel_Patches/include/linux/susfs.h ./include/linux
+          cp NonGKI_Kernel_Patches/include/linux/susfs_def.h ./include/linux
+          
+          patch -p1 < 50_add_susfs_in_kernel-4.19.patch || true
+          patch -p1 < KernelSU/10_enable_susfs_for_ksu.patch || true
 
       - name: Setup ccache
         uses: hendrikmuhs/ccache-action@v1.2
