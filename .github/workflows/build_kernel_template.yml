@@ -1,4 +1,4 @@
-name: Build Kernel Template (Cannot be used for compilation directly)
+name: Build Redminote9pro 5g Ker with susfs
 on:
   workflow_call:
   workflow_dispatch:
