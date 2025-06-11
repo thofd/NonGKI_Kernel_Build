@@ -1,6 +1,6 @@
 # Non-GKI Kernel with KSU and SUSFS
 ![GitHub branch check runs](https://img.shields.io/github/check-runs/JackA1ltman/NonGKI_Kernel_Build/main)![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/JackA1ltman/NonGKI_Kernel_Build/latest/total)  
-[支持列表](Supported_Devices.md) | 中文文档 | [English](README_EN.md) | [更新日志](Updated.md)  
+[支持列表](Supported_Devices.md) | 中文文档 | [更新日志](Updated.md)  
 
 **Ver**.1.5
 
