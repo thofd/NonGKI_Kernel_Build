@@ -2,6 +2,7 @@
 name: Build Kernel Redmi note9 Pro
 on:
   workflow_call:
+  workflow_dispatch:
 env:
   PYTHON_VERSION: "3" # Only 2(Ubuntu 22.04) or 3(Any OS Versions).
   PACK_METHOD: "Anykernel3" # Anykernel3 need SOURCE and BRANCH, MKBOOTIMG needn't it.
